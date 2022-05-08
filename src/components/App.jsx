@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { ContactsList } from './ContactsList';
 import { ContactForm } from './ContactForm';
 import { Filter } from './Filter';
+import style from './AppContainer.module.css';
 
 export class App extends Component {
   state = {
@@ -41,7 +42,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={style.appContainer}>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.onAddContact} />
         <h2>Contacts</h2>

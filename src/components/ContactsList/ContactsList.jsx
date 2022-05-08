@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import style from './ContactsList.module.css';
 
 export const ContactsList = ({ contactsArr, deleteContact }) => {
   return (
@@ -7,9 +8,15 @@ export const ContactsList = ({ contactsArr, deleteContact }) => {
         {contactsArr.length > 0 &&
           contactsArr.map(({ name, number, id }) => {
             return (
-              <li key={id}>
-                {name}: {number}
-                <button onClick={() => deleteContact(id)} ype="button">
+              <li className={style.list} key={id}>
+                <p>
+                  {name}: {number}
+                </p>
+                <button
+                  className={style.button}
+                  onClick={() => deleteContact(id)}
+                  ype="button"
+                >
                   Delete
                 </button>
               </li>
